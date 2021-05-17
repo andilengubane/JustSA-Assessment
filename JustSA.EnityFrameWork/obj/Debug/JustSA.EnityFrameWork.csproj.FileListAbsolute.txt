@@ -1,0 +1,11 @@
+C:\JustSA\JustSA\JustSA.EnityFrameWork\bin\Debug\JustSA.EnityFrameWork.dll.config
+C:\JustSA\JustSA\JustSA.EnityFrameWork\bin\Debug\JustSA.EnityFrameWork.dll
+C:\JustSA\JustSA\JustSA.EnityFrameWork\bin\Debug\JustSA.EnityFrameWork.pdb
+C:\JustSA\JustSA\JustSA.EnityFrameWork\bin\Debug\EntityFramework.dll
+C:\JustSA\JustSA\JustSA.EnityFrameWork\bin\Debug\EntityFramework.SqlServer.dll
+C:\JustSA\JustSA\JustSA.EnityFrameWork\bin\Debug\EntityFramework.xml
+C:\JustSA\JustSA\JustSA.EnityFrameWork\bin\Debug\EntityFramework.SqlServer.xml
+C:\JustSA\JustSA\JustSA.EnityFrameWork\obj\Debug\JustSA.EnityFrameWork.csproj.CoreCompileInputs.cache
+C:\JustSA\JustSA\JustSA.EnityFrameWork\obj\Debug\JustSA.EnityFrameWork.csproj.CopyComplete
+C:\JustSA\JustSA\JustSA.EnityFrameWork\obj\Debug\JustSA.EnityFrameWork.dll
+C:\JustSA\JustSA\JustSA.EnityFrameWork\obj\Debug\JustSA.EnityFrameWork.pdb

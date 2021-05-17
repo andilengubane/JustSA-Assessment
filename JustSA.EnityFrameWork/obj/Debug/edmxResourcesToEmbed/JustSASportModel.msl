@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JustSAModelStoreContainer" CdmEntityContainer="JustSAEntities">
+    <EntitySetMapping Name="DataLog">
+      <EntityTypeMapping TypeName="JustSAModel.DataLog">
+        <MappingFragment StoreEntitySet="DataLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataLookUp">
+      <EntityTypeMapping TypeName="JustSAModel.DataLookUp">
+        <MappingFragment StoreEntitySet="DataLookUp">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DataLogId" ColumnName="DataLogId" />
+          <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SportMembers">
+      <EntityTypeMapping TypeName="JustSAModel.SportMembers">
+        <MappingFragment StoreEntitySet="SportMembers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DataLookUpId" ColumnName="DataLookUpId" />
+          <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetAllSportMemberDetail" FunctionName="JustSAModel.Store.GetAllSportMemberDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JustSAModel.GetAllSportMemberDetail_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DataLookUpId" ColumnName="DataLookUpId" />
+          <ScalarProperty Name="DateLogged" ColumnName="DateLogged" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JustSAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DataLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="150" />
+    <Property Name="DateLogged" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DataLookUp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="150" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="DataLogId" Type="int" />
+    <Property Name="DateLogged" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SportMembers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="150" />
+    <Property Name="LastName" Type="varchar" MaxLength="150" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="DataLookUpId" Type="int" />
+    <Property Name="DateLogged" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__DataLookU__DataL__1367E606">
+    <End Role="DataLog" Type="Self.DataLog" Multiplicity="0..1" />
+    <End Role="DataLookUp" Type="Self.DataLookUp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataLog">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DataLookUp">
+        <PropertyRef Name="DataLogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SportMemb__DataL__21B6055D">
+    <End Role="DataLookUp" Type="Self.DataLookUp" Multiplicity="0..1" />
+    <End Role="SportMembers" Type="Self.SportMembers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataLookUp">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SportMembers">
+        <PropertyRef Name="DataLookUpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetAllSportMemberDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="JustSAModelStoreContainer">
+    <EntitySet Name="DataLog" EntityType="Self.DataLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DataLookUp" EntityType="Self.DataLookUp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SportMembers" EntityType="Self.SportMembers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__DataLookU__DataL__1367E606" Association="Self.FK__DataLookU__DataL__1367E606">
+      <End Role="DataLog" EntitySet="DataLog" />
+      <End Role="DataLookUp" EntitySet="DataLookUp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SportMemb__DataL__21B6055D" Association="Self.FK__SportMemb__DataL__21B6055D">
+      <End Role="DataLookUp" EntitySet="DataLookUp" />
+      <End Role="SportMembers" EntitySet="SportMembers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
